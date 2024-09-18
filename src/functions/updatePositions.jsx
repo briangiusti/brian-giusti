@@ -1,11 +1,15 @@
-export const updatePositions = (currentPosition,setPositionFunction) => {
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
+export const updatePositions = (setMagnets) => {
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
 
-    // Ensure draggable items stay within bounds
-    setPositionFunction((prev) => ({
-      x: Math.max(0, Math.min(prev.x, windowWidth - 100)), // Limit width
-      y: Math.max(0, Math.min(prev.y, windowHeight - 100)), // Limit height
-    }));
-  };
+  setMagnets((prevMagnets) =>
+    prevMagnets.map((magnet) => ({
+      ...magnet,
+      position: {
+        x: Math.max(0, Math.min(magnet.position.x, windowWidth - 100)),
+        y: Math.max(0, Math.min(magnet.position.y, windowHeight - 100)),
+      },
+    }))
+  );
+};
 
