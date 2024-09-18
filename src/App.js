@@ -9,7 +9,6 @@ import { updatePositions } from "./functions/updatePositions";
 function App() {
   const [magnets, setMagnets] = useState(initialMagnets);
 
-  // Use the custom hook to update positions on resize
   useWindowResize(() => updatePositions(setMagnets));
 
   return (
