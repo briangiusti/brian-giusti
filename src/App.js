@@ -5,6 +5,7 @@ import useWindowResize from "./hooks/useWindowResize";
 import { initialMagnets } from "./magnetData";
 import { handleDragEnd } from "./functions/handleDrag";
 import { updatePositions } from "./functions/updatePositions";
+import LetterMagnet from "./LetterMagnet";
 
 function App() {
   const [magnets, setMagnets] = useState(initialMagnets);
@@ -15,13 +16,14 @@ function App() {
     <DndContext
       onDragEnd={(event) => handleDragEnd(event, magnets, setMagnets)}
     >
+ 
       {magnets.map((magnet) => (
-        <Magnet
+        <LetterMagnet
           key={magnet.id}
           id={magnet.id}
-          color={magnet.color}
+          src={magnet.src}
           position={magnet.position}
-          title={magnet.title}
+          style={magnet.style}
         />
       ))}
     </DndContext>
@@ -29,3 +31,10 @@ function App() {
 }
 
 export default App;
+
+
+
+//images for the letters -> make an array of them so they are all mapped on their own and thus able to be moved
+//but start with them all in a container to start so you only need to set the position once per word
+//or you can just base the math based on the starting point of the initial letter of each word, then add a % of pixels per. 
+// youd have to do it on mobile and on desktop but it would be more fun
