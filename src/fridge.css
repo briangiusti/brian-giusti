@@ -43,8 +43,32 @@
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 3D effect */
 }
 
-/* Ensure magnets are on top of the fridge/freezer */
+
 .magnet {
-  position: absolute;
+  width: 8vw; /* Width as a percentage of viewport width */
+  height: 8vw; /* Height as a percentage of viewport width, keeping a square ratio */
+  cursor: grab; /* Dragging cursor */
+  position: absolute; /* Allow absolute positioning */
   z-index: 10; /* Higher value to be above other elements */
+}
+
+/* Optional hover effect to slightly increase size */
+.magnet:hover {
+  transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+/* Responsive Design: For larger screens (e.g., desktop) */
+@media (min-width: 1024px) {
+  .magnet {
+    width: 6vw; /* Adjust size for larger screens */
+    height: 6vw;
+  }
+}
+
+/* Responsive Design: For smaller screens (e.g., mobile) */
+@media (max-width: 600px) {
+  .magnet {
+    width: 12vw; /* Increase size for smaller screens */
+    height: 12vw;
+  }
 }
