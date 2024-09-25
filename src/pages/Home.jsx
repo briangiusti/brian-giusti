@@ -8,6 +8,7 @@ import { updatePositions } from "../functions/updatePositions"
 import useWindowResize from "../hooks/useWindowResize"
 import { handleDragEvent } from "../functions/handleDragEvent"
 import "../styles/fridge.css"
+import { sensors } from '../functions/sensors';
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
   return (
     <DndContext
       onDragEnd={(event) => handleDragEvent(event, magnets, setMagnets)}
+      sensors={sensors}
     >
       <div className="refrigerator-container">
         <div className="freezer">
