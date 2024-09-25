@@ -43,8 +43,3 @@
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 3D effect */
 }
 
-/* Ensure magnets are on top of the fridge/freezer */
-.magnet {
-  position: absolute;
-  z-index: 10; /* Higher value to be above other elements */
-}

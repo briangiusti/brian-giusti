@@ -32,6 +32,7 @@ const Home = () => {
       onDragEnd={(event) => handleDragEvent(event, magnets, setMagnets)}
       sensors={sensors}
     >
+
       <div className="refrigerator-container">
         <div className="freezer">
           <div className="freezer-handle"></div>
