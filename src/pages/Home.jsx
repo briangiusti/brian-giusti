@@ -1,6 +1,7 @@
 // src/pages/Home.js
 import React from 'react';
-import { DndContext } from '@dnd-kit/core';
+import { sortableKeyboardCoordinates } from "@dnd-kit/sortable";
+import { DndContext, KeyboardSensor, PointerSensor, TouchSensor, useSensor, useSensors } from '@dnd-kit/core';
 import { useState } from 'react';
 import LetterMagnet from "../components/LetterMagnet"
 import { initialMagnets } from "../data/magnetData"
@@ -8,13 +9,19 @@ import { updatePositions } from "../functions/updatePositions"
 import useWindowResize from "../hooks/useWindowResize"
 import { handleDragEvent } from "../functions/handleDragEvent"
 import "../styles/fridge.css"
-import { sensors } from '../functions/sensors';
+
 
 
 const Home = () => {
   const [magnets, setMagnets] = useState(initialMagnets);
 
   useWindowResize(() => updatePositions(setMagnets));
+
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(TouchSensor),
+    useSensor(KeyboardSensor, {coordinateGetter: sortableKeyboardCoordinates}),
+  );
 
   return (
     <DndContext
