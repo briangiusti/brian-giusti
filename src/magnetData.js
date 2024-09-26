@@ -1,6 +1,6 @@
 import B from "./images/B.png";
 import R from "./images/R.png";
-import I from "./images/I.png";
+import I from "./images/I"
 import A from "./images/A.png";
 import N from "./images/N.png";
 import G from "./images/G.png";

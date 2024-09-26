@@ -4,7 +4,6 @@ import { useDraggable } from "@dnd-kit/core";
 export default function Magnet({ position, id, color, title }) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({ id });
 
-  // Apply the transformation
   const style = {
     width: "100px",
     height: "100px",
