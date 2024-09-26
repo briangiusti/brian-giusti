@@ -10,8 +10,6 @@ import useWindowResize from "../hooks/useWindowResize"
 import { handleDragEvent } from "../functions/handleDragEvent"
 import "../styles/fridge.css"
 
-
-
 const Home = () => {
   const [magnets, setMagnets] = useState(initialMagnets);
 
