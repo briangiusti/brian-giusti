@@ -1,50 +1,57 @@
+/* full screen width and height + some color + handle postioner */
+
 .refrigerator-container {
-  height: 100vh;
-  width: 100%; /* Fridge width without margins */
-  margin: 0; /* No margins to center the container */
+  height: 100vh; 
+  width: 100%; 
+  margin: 0;
   background-color: #e0e0e0; /* Light gray for fridge */
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
   position: relative; /* Allows for absolute positioning of handles */
 }
 
+/* some % of the 100vh 60-75 + some color  */
 .freezer {
-  height: 70vh; /* Adjust height as needed */
-  background-color: #b0b0b0; /* Darker gray for freezer */
-  position: relative; /* Needed for overlaying the handle */
+  height: 70vh;
+  background-color: #b0b0b0; 
+  position: relative; 
 }
 
+
+/* longer than 100vh so there is a place to scroll + some color  */
 .fridge {
-  height: 150vh; /* Takes the remaining height */
-  background-color: #d0d0d0; /* Slightly lighter gray for fridge */
-  position: relative; /* Needed for overlaying the handle */
-  overflow-y: scroll; /* Allows scrolling within the fridge */
+  height: 150vh;
+  background-color: #d0d0d0; 
+  position: relative; 
+  overflow-y: scroll; 
 }
 
+
+/* overlay position + some distance from the top and right side, 
+height and width + a different color than the door 
+probably some shadow to give depth and rounded corners on the div */
 .freezer-handle {
-  position: absolute; /* Overlay on freezer */
-  top: 10%; /* 10% from the top */
-  right: 10%; /* 10% from the right */
-  height: 80%; /* 100% - top 10% - bottom 10% */
-  width: 20px; /* Width of the handle */
-  background-color: #a0a0a0; /* Medium gray for handle */
-  border-radius: 5px; /* Rounded edges */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 3D effect */
+  position: absolute; 
+  top: 10%; 
+  right: 10%; 
+  height: 80%; 
+  width: 20px; 
+  background-color: #a0a0a0;
+  border-radius: 5px; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
 }
 
+/* overlay position + some distance from the top and right side, 
+height and width + a different color than the door 
+probably some shadow to give depth and rounded corners on the div */
 .fridge-handle {
-  position: absolute; /* Overlay on fridge */
-  top: 20%; /* 20% from the top */
-  right: 10%; /* 10% from the right */
-  height: 60%; /* 100% - top 20% - bottom 20% */
-  width: 20px; /* Width of the handle */
-  background-color: #808080; /* Slightly darker gray for handle */
-  border-radius: 5px; /* Rounded edges */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 3D effect */
+  position: absolute; 
+  top: 20%; 
+  right: 10%; 
+  height: 60%; 
+  width: 20px; 
+  background-color: #808080; 
+  border-radius: 5px; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
 }
 
-/* Ensure magnets are on top of the fridge/freezer */
-.magnet {
-  position: absolute;
-  z-index: 10; /* Higher value to be above other elements */
-}

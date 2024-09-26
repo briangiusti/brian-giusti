@@ -1,4 +1,4 @@
-// src/pages/Home.js
+
 import React from 'react';
 import { sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 import { DndContext, KeyboardSensor, PointerSensor, TouchSensor, useSensor, useSensors } from '@dnd-kit/core';
@@ -10,8 +10,6 @@ import useWindowResize from "../hooks/useWindowResize"
 import { handleDragEvent } from "../functions/handleDragEvent"
 import "../styles/fridge.css"
 
-
-
 const Home = () => {
   const [magnets, setMagnets] = useState(initialMagnets);
 
@@ -19,7 +17,11 @@ const Home = () => {
 
   const sensors = useSensors(
     useSensor(PointerSensor),
-    useSensor(TouchSensor),
+    useSensor(TouchSensor, {
+      activationConstraint: {
+        distance: 10,
+      },
+    }),
     useSensor(KeyboardSensor, {coordinateGetter: sortableKeyboardCoordinates}),
   );
 
@@ -28,6 +30,7 @@ const Home = () => {
       onDragEnd={(event) => handleDragEvent(event, magnets, setMagnets)}
       sensors={sensors}
     >
+
       <div className="refrigerator-container">
         <div className="freezer">
           <div className="freezer-handle"></div>

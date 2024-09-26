@@ -1,11 +1,11 @@
 import React from "react";
 import { useDraggable } from "@dnd-kit/core";
+import "../styles/LetterMagnet.css"
 
-export default function LetterMagnet({ position, id, src, style }) {
+export default function LetterMagnet({ position, id, src }) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({ id });
 
   const mergedStyle = {
-    ...style, // Default styles passed from parent (width, height, etc.)
     top: position.y,
     left: position.x,
     transform: transform
@@ -17,7 +17,7 @@ export default function LetterMagnet({ position, id, src, style }) {
     <div 
       ref={setNodeRef} 
       style={mergedStyle} 
-      className="magnet" // Add class for magnet styling
+      className="letterMagnet"
       {...listeners} 
       {...attributes}
     >
