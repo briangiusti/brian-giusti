@@ -1,10 +1,10 @@
-import { scalePositions } from "./scalePositions";
+import { scalePositions } from "./scaledEdges";
+import { scaleValue } from "./scaleValue";
 
 export const handleDragEvent = (event, magnets, setMagnets) => {
   const { active, delta } = event;
-
   const boundsScaler = scalePositions()
-
+  
   setMagnets((prevMagnets) =>
     prevMagnets.map((magnet) =>
       magnet.id === active.id

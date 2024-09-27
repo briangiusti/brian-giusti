@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
 const useWindowResize = (updatePositions) => {
+
   useEffect(() => {
     window.addEventListener('resize', updatePositions);
     return () => {
