@@ -1,7 +1,35 @@
 .letterMagnet {
-    position: absolute;
-    cursor: "grab";
-    z-index: 10; 
-    width: 100px;
-    height: 100px;
+  position: absolute;
+  cursor: "grab";
+  z-index: 10;
+  width: 125px;
+  height: 125px;
+}
+
+.letterMagnet:hover {
+  transform: scale(1.05); /* Scale the div to 105% of its original size */
+}
+
+/* middle */
+@media (max-width: 1279px) {
+  .letterMagnet {
+    width: 85px;
+    height: 85px;
   }
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  .letterMagnet {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+/* mobile */
+@media (max-width: 480px) {
+  .letterMagnet {
+    width: 50px;
+    height: 50px;
+  }
+}

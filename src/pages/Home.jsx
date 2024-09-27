@@ -8,10 +8,11 @@ import { initialMagnets } from "../data/magnetData"
 import { updatePositions } from "../functions/updatePositions"
 import useWindowResize from "../hooks/useWindowResize"
 import { handleDragEvent } from "../functions/handleDragEvent"
+import { scaleInitialPositions } from "../functions/scaleInitialPositions"
 import "../styles/fridge.css"
 
 const Home = () => {
-  const [magnets, setMagnets] = useState(initialMagnets);
+  const [magnets, setMagnets] = useState(scaleInitialPositions(initialMagnets));
 
   useWindowResize(() => updatePositions(setMagnets));
 

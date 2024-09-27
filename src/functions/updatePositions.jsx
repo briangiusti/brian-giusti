@@ -1,9 +1,8 @@
-import { scalePositions } from "./scalePositions";
+import { scalePositions } from "./scaledEdges";
 
 export const updatePositions = (setMagnets) => {
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
-
   const boundsScaler = scalePositions()
 
   setMagnets((prevMagnets) =>
